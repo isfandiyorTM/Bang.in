@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-bg-color: #016a70;
+    --text-gray: #393e46;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: var(--main-bg-color);
+}
+
+header {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--main-bg-color);
+}
+
+header nav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+header nav .container {
+    position: fixed;
+    z-index: 10;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 40px;
+}
+
+header nav .container .navigation a {
+    text-decoration: none;
+    margin: 0 25px;
+    font-size: 20px;
+    color: var(--text-gray);
+    transition: 0.4s;
+}
+
+header nav .container .navigation a:hover {
+    color: var(--main-bg-color);
+}
+
+header nav .container .register button {
+    font-size: 20px;
+    padding: 8px 20px;
+    color: white;
+    background: var(--main-bg-color);
+    border-radius: 20px;
+}
+
+header section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80vh;
+}
+
+header section .container .text-div {
+    color: white;
+}
+
+header section .container .text-div h4 {
+    color: white;
+    font-size: 28px;
+}
+
+header section .container .text-div h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+header section .container .text-div p {
+    font-size: 16px;
+    color: white;
+    margin-top: 10px;
+}
+
+header section .container .text-div button {
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+header section .container .text-div button:hover {
+    color: var(--main-bg-color);
+    background-color: white;
+}
+
+
+/* ----------------------------------------------------------------------------- */
+
+
+/* Main start */
+
+.analitics {
+    min-height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.analitics h1 {
+    text-align: center;
+    font-size: 48px;
+    line-height: 50px;
+    font-weight: 600;
+}
+
+.analitics h1 span {
+    font-size: 28px;
+}
+
+
+/* Media */
+
+@media (max-width: 1250px) {
+    .container {
+        width: 1000px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .container {
+        width: 900px;
+    }
+    header section .container {
+        position: relative;
+    }
+    header section .container .image {
+        position: absolute;
+        z-index: 1;
+        right: 0;
+    }
+    header section .container .image img {
+        width: 400px;
+    }
+    header section .container .text-div {
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(4px);
+        position: absolute;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 950px) {
+    .container {
+        width: 800px;
+    }
+    header nav .container .navigation.show {
+        right: 60px;
+    }
+    header nav .container .navigation {
+        position: fixed;
+        top: 130px;
+        right: -1000px;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 20px;
+        transition: 0.5s;
+    }
+}
+
+@media (max-width: 850px) {
+    .container {
+        width: 700px;
+    }
+}
+
+@media (max-width: 750px) {
+    .container {
+        width: 600px;
+    }
+}
+
+@media (max-width: 650px) {
+    .container {
+        width: 500px;
+    }
+    header section .container {
+        height: 100vh;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        width: 400px;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        width: 300px;
+    }
+    header nav .container {
+        padding: 20px;
+    }
+    header nav .container .register .register-btn.show {
+        right: 60px;
+    }
+    header nav .container .register .register-btn {
+        position: fixed;
+        padding: 8px 27px;
+        top: 295px;
+        right: -1000px;
+        background: white;
+        transition: 0.6s;
+        color: var(--main-bg-color);
+    }
+    header section .container .text-div h4 {
+        font-size: 20px;
+    }
+    header section .container .text-div h1 {
+        font-size: 35px;
+    }
+    header section .container .image img {
+        width: 300px;
+    }
+    header nav .container .navigation.show {
+        right: 40px;
+    }
+    header nav .container .register .register-btn.show {
+        right: 40px;
+    }
+    .analitics {
+        justify-content: center;
+        align-items: center;
+        height: 550px;
+    }
+}
