@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap");
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +8,7 @@
 :root {
     --main-bg-color: #016a70;
     --text-gray: #393e46;
+    --text-black: #222831;
 }
 
 .container {
@@ -26,8 +27,12 @@ button:active {
     transform: translateY(2px);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    width: 100%;
+    width: 100vw;
     overflow-x: hidden;
     font-family: "Poppins", sans-serif;
 }
@@ -37,14 +42,18 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-    border-radius: 5px;
     background: var(--main-bg-color);
 }
 
 header {
     width: 100%;
     min-height: 100vh;
+    overflow: hidden;
     background-color: var(--main-bg-color);
+}
+
+header nav.sticky {
+    left: -2.5px;
 }
 
 header nav {
@@ -53,19 +62,29 @@ header nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
+    height: 80px;
+    transition: 0.5s;
+}
+
+header nav .container.sticky {
+    position: fixed;
+    width: 100%;
+    top: -40px;
+    border-radius: 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
 }
 
 header nav .container {
-    position: fixed;
     z-index: 10;
-    background: white;
     border-radius: 20px;
+    background: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     padding: 20px 40px;
+    transform: translateY(40px);
+    transition: 0.5s;
 }
 
 header nav .container .navigation a {
@@ -80,12 +99,18 @@ header nav .container .navigation a:hover {
     color: var(--main-bg-color);
 }
 
-header nav .container .register button {
+header nav .container .register button,
+header nav .container .register .register-btn {
     font-size: 20px;
     padding: 8px 20px;
     color: white;
     background: var(--main-bg-color);
     border-radius: 20px;
+    text-decoration: none;
+}
+
+#menu {
+    display: none;
 }
 
 header section .container {
@@ -149,10 +174,194 @@ header section .container .text-div button:hover {
     font-size: 48px;
     line-height: 50px;
     font-weight: 600;
+    transition: 0.4s;
+    cursor: pointer;
+    color: var(--text-gray);
+}
+
+.analitics h1:hover {
+    transform: scale(1.01);
+    color: var(--main-bg-color);
+}
+
+.analitics h1:hover span {
+    color: var(--text-gray);
 }
 
 .analitics h1 span {
     font-size: 28px;
+}
+
+
+/* Categories */
+
+.category .category-text {
+    text-align: center;
+    font-size: 28px;
+    color: var(--text-black);
+    font-weight: 400;
+    margin-top: 150px;
+}
+
+.category h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.category .cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 80px 0 0px;
+}
+
+.category .cards .card {
+    text-align: center;
+    width: 333px;
+    background: white;
+    border-radius: 20px;
+    padding: 44px 20px;
+    transition: 0.5s;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    margin: 0px 0 30px;
+}
+
+.category .cards .card:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+    box-shadow: 0px 13px 10px rgba(0, 0, 0, 0.5);
+}
+
+.category .cards .card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-gray);
+    margin: 30px 0 5px;
+}
+
+.category .cards .card p {
+    width: 180px;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+
+/* Product */
+
+.product .product-text {
+    text-align: center;
+    font-size: 28px;
+    color: var(--text-black);
+    font-weight: 400;
+    margin-top: 150px;
+}
+
+.product .waste {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.product .cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 80px 0 0px;
+}
+
+.product .cards .card {
+    width: 333px;
+    border-radius: 22px;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+    background-color: var(--main-bg-color);
+    margin-bottom: 50px;
+    transition: 0.4s;
+}
+
+.product .cards .card .img img {
+    width: 100%;
+    background: white;
+}
+
+.product .cards .card:hover {
+    /* transform: scale(1.01); */
+    box-shadow: 0px 10px 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+.product .cards .card h1 {
+    margin: 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.product .cards .card p {
+    margin: 0px 20px 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+}
+
+
+/* ----------------------------------------- */
+
+
+/* Footer */
+
+footer {
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    overflow: hidden;
+}
+
+footer .background img {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 100%;
+}
+
+footer .background img:first-child {
+    z-index: 3;
+    animation: wave 7s infinite;
+}
+
+footer .background img:nth-child(2) {
+    z-index: 2;
+    animation: wave_reverse 7s infinite;
+}
+
+footer .background img:nth-child(3) {
+    z-index: 1;
+    animation: wave 7.5s infinite;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(-300px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes wave_reverse {
+    0% {
+        transform: translateX(-300px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-300px);
+    }
 }
 
 
@@ -192,12 +401,16 @@ header section .container .text-div button:hover {
     .container {
         width: 800px;
     }
+    header nav .container .navigation.sticky {
+        border-radius: 0px;
+    }
     header nav .container .navigation.show {
-        right: 60px;
+        right: 0px;
     }
     header nav .container .navigation {
+        width: 100%;
         position: fixed;
-        top: 130px;
+        top: 79px;
         right: -1000px;
         padding: 20px 0;
         display: flex;
@@ -205,6 +418,12 @@ header section .container .text-div button:hover {
         background: white;
         border-radius: 20px;
         transition: 0.5s;
+        text-align: center;
+        border-top: 1px solid;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    }
+    #menu {
+        display: inline-block;
     }
 }
 
@@ -217,6 +436,21 @@ header section .container .text-div button:hover {
 @media (max-width: 750px) {
     .container {
         width: 600px;
+    }
+    .category .cards {
+        justify-content: center;
+    }
+    .category .cards .card {
+        width: 100%;
+    }
+    .product .cards {
+        justify-content: center;
+    }
+    .product .cards .card {
+        width: 100%;
+    }
+    footer .background img {
+        width: 400%;
     }
 }
 
@@ -243,7 +477,7 @@ header section .container .text-div button:hover {
         padding: 20px;
     }
     header nav .container .register .register-btn.show {
-        right: 60px;
+        right: 0px;
     }
     header nav .container .register .register-btn {
         position: fixed;
@@ -263,15 +497,18 @@ header section .container .text-div button:hover {
     header section .container .image img {
         width: 300px;
     }
-    header nav .container .navigation.show {
+    /* header nav .container .navigation.show {
         right: 40px;
     }
     header nav .container .register .register-btn.show {
-        right: 40px;
-    }
+        right: 40px; 
+    } */
     .analitics {
         justify-content: center;
         align-items: center;
         height: 550px;
+    }
+    footer .background img {
+        width: 700%;
     }
 }
